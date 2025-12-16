@@ -60,11 +60,11 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "https://www.loliapi.com/acg/pp/", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "程生",
-	bio: "一个学生，一个创造者，一个分享者。",
+	bio: "Dream as if you will live foreverAnd live as if you'll die today",
 	links: [
 		{
 			name: "Twitter",
-			icon: "fa6-brands:twitter", // Visit https://icones.js.org/ for icon codes
+			icon: "lucide:accessibility", // Visit https://icones.js.org/ for icon codes
 			// You will need to install the corresponding icon set if it's not already included
 			// `pnpm add @iconify-json/<icon-set-name>`
 			url: "https://twitter.com",

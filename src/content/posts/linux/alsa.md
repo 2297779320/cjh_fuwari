@@ -59,3 +59,8 @@ snd_pcm_state_t snd_pcm_state(snd_pcm_t *pcm);
 周期为10 
 
 480 *8   就是每次播放所需要的数据量   
+
+![alt text](image-1.png)
+
+
+![alt text](image.png)
