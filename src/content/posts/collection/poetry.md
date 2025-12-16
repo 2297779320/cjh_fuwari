@@ -36,3 +36,7 @@ lang: 'zh-CN'
 
 16. 桑条无叶土生烟，箫管迎龙水庙前。
 朱门几处看歌舞，犹恐春阴咽管弦。
+
+17. > [book](https://book.84901992.xyz/)    zlib
+18. > [cook](https://cooklikehoc.soilzhu.su/)  老乡鸡
+ 
