@@ -13,6 +13,7 @@ let isSearching = false;
 let pagefindLoaded = false;
 let initialized = false;
 
+// 模拟搜索结果
 const fakeResult: SearchResult[] = [
 	{
 		url: url("/"),

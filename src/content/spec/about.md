@@ -1,5 +1,6 @@
 # About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+
+这是第一次自建博客
 
 ::github{repo="saicaca/fuwari"}
 
