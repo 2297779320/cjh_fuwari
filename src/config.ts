@@ -3,7 +3,6 @@ import type {
 	LicenseConfig,
 	NavBarConfig,
 	ProfileConfig,
-	SiteConfig,
 } from "./types/config";
 import { LinkPreset } from "./types/config";
 
@@ -23,6 +22,21 @@ export const siteConfig: SiteConfig = {
 			enable: false, // Display the credit text of the banner image
 			text: "", // Credit text to be displayed
 			url: "", // (Optional) URL link to the original artwork or artist's page
+		},
+	},
+
+	live2d: {
+		enable: true,
+		model: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/model/hijiki/",
+		position: "left",
+		width: 280,
+		height: 320,
+		tips: {
+			welcome: ["欢迎来到我的博客！", "今天想看什么内容呢？"],
+			home: ["点击这里回到首页哦~"],
+			theme: ["要不要换个主题试试？"],
+			close: ["拜拜~", "下次再见！"],
+			copy: ["复制成功啦！", "记得注明出处哦~"],
 		},
 	},
 	toc: {
@@ -93,3 +107,23 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	// Please select a dark theme, as this blog theme currently only supports dark background color
 	theme: "github-dark",
 };
+
+export interface Live2DConfig {
+	enable: boolean;
+	model: string;
+	position: "left" | "right";
+	width: number;
+	height: number;
+	tips: {
+		welcome: string[];
+		home: string[];
+		theme: string[];
+		close: string[];
+		copy: string[];
+	};
+}
+
+export interface SiteConfig {
+	// ... 其他现有属性
+	live2d?: Live2DConfig;
+}

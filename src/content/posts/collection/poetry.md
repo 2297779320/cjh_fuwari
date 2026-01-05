@@ -41,3 +41,4 @@ lang: 'zh-CN'
 18. > [cook](https://cooklikehoc.soilzhu.su/)  老乡鸡
  
 19. 艰巨在于漫长,光荣在于平淡
+20. 遍地哀鸿满城血，无非一念救苍生。

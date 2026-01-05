@@ -35,6 +35,21 @@ export type SiteConfig = {
 		depth: 1 | 2 | 3;
 	};
 
+	live2d: {
+		enable: boolean;
+		model: string;
+		position: "left" | "right";
+		width: number;
+		height: number;
+		tips: {
+			welcome: string[];
+			home: string[];
+			theme: string[];
+			close: string[];
+			copy: string[];
+		};
+	};
+
 	favicon: Favicon[];
 };
 

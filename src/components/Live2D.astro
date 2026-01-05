@@ -1,0 +1,67 @@
+---
+import { siteConfig } from "@/config";
+
+const { live2d } = siteConfig;
+if (!live2d?.enable) return null;
+---
+
+{/* Live2D 容器 */}
+<div 
+  class="live2d-widget" 
+  data-model={live2d.model}
+  data-position={live2d.position}
+  data-width={live2d.width}
+  data-height={live2d.height}
+></div>
+
+<script>
+  let live2dInstance = null;
+  async function initLive2D() {
+    console.log('2');
+    const container = document.querySelector('.live2d-widget');
+    if (!container || live2dInstance) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js';
+    // script.onload = () => {
+    //   live2dInstance = window.L2Dwidget.init({
+    //     // model: { url: container.dataset.model },
+    //     display: {
+    //       position: container.dataset.position,
+    //       width: { live2d }.width,
+    //       height: { live2d }.height,
+    //     },
+    //     mobile: { show: false }, 
+    //   });
+    // };
+    live2dInstance = true;
+    document.body.appendChild(script);
+  }
+
+  // 销毁 Live2D 实例
+  function destroyLive2D() {
+    console.log('1');
+    if (live2dInstance) {
+      // live2dInstance.destroy();
+      live2dInstance = null;
+    }
+    const el = document.querySelector('.live2d-widget');
+    if (el) el.innerHTML = '';
+  }
+
+  if (window.swup) {
+    window.swup.on('willReplaceContent', resetLive2D);
+    window.swup.on('contentReplaced', resetLive2D);
+    window.swup.on('contextmenu', resetLive2D);
+  }
+
+  function resetLive2D() 
+  {
+    destroyLive2D();
+    initLive2D();
+  }
+
+  window.addEventListener('contextmenu', resetLive2D);
+
+  resetLive2D();
+</script>

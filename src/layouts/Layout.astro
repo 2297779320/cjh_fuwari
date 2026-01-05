@@ -1,4 +1,5 @@
 ---
+import "../styles/main.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
@@ -19,6 +20,7 @@ import { defaultFavicons } from "../constants/icon";
 import type { Favicon } from "../types/config";
 import { pathsEqual, url } from "../utils/url-utils";
 import "katex/dist/katex.css";
+import Live2D from "../components/Live2D.astro";
 
 interface Props {
 	title?: string;
@@ -156,6 +158,7 @@ const bannerOffset =
 
 		<!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
 		<div id="page-height-extend" class="hidden h-[300vh]"></div>
+		<Live2D>
 	</body>
 </html>
 
@@ -211,6 +214,7 @@ import {
 	MAIN_PANEL_OVERLAPS_BANNER_HEIGHT
 } from "../constants/constants";
 import { siteConfig } from '../config';
+import Live2D from '@components/Live2D.astro';
 
 /* Preload fonts */
 // (async function() {
@@ -363,12 +367,25 @@ function showBanner() {
 	banner.classList.remove('opacity-0', 'scale-105');
 }
 
+// function resetLive2D() {
+// 	if (!siteConfig.live2d.enable) return;
+
+// 	const live2d = document.getElementById('.live2d-widget');
+// 	if (!live2d) {
+// 		console.error('live2d element not found');
+// 		return;
+// 	}
+// 	live2d.classList.remove();
+
+// }
+
 function init() {
 	// disableAnimation()()		// TODO
 	loadTheme();
 	loadHue();
 	initCustomScrollbar();
 	showBanner();
+	// resetLive2D();
 }
 
 /* Load settings when entering the site */
@@ -495,6 +512,7 @@ function scrollFunction() {
 }
 window.onscroll = scrollFunction
 
+// window.onresize = Live2D.call
 window.onresize = () => {
 	// calculate the --banner-height-extend, which needs to be a multiple of 4 to avoid blurry text
 	let offset = Math.floor(window.innerHeight * (BANNER_HEIGHT_EXTEND / 100));
@@ -565,3 +583,6 @@ if (window.swup) {
 	document.addEventListener("swup:enable", setup)
 }
 </script>
+
+
+

@@ -51,3 +51,19 @@ html.is-animating .transition-swup-fade {
 #post-container :nth-child(5) { animation-delay: calc(var(--content-delay) + 250ms) }
 #post-container :nth-child(6) { animation-delay: calc(var(--content-delay) + 325ms) }
 
+
+/* 在 transition.css 中补充 */
+/* 页面切换时隐藏 Live2D */
+html.is-changing .live2d-widget,
+html.is-animating .live2d-widget {
+  visibility: hidden; /* 保留占位，避免布局跳动 */
+  opacity: 0;
+  pointer-events: none; /* 禁止交互 */
+}
+
+/* 页面切换完成后显示 */
+html:not(.is-changing):not(.is-animating) .live2d-widget {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}

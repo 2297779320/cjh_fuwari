@@ -150,3 +150,22 @@
     }
   }
 }
+
+.live2d-widget {
+    position: fixed !important;
+    left: 0!important;
+    bottom: 0!important;
+    width: 280px!important;
+    height: 320px!important;
+    z-index: 100!important;
+    pointer-events: none!important;
+    
+    @media (max-width: 768px) {
+        display: none;
+    };
+    
+    @media (max-width: 480px) {
+        display: none;
+    };
+  }
+  
