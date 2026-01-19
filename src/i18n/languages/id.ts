@@ -5,6 +5,9 @@ export const id: Translation = {
 	[Key.home]: "Beranda",
 	[Key.about]: "Tentang",
 	[Key.archive]: "Arsip",
+	[Key.images]: "Gambar",
+	[Key.links]: "Links",
+	[Key.feed]: "Friend Feed",
 	[Key.search]: "Cari",
 
 	[Key.tags]: "Tag",
@@ -23,6 +26,8 @@ export const id: Translation = {
 	[Key.minutesCount]: "menit",
 	[Key.postCount]: "postingan",
 	[Key.postsCount]: "postingan",
+	[Key.commentCount]: "komentar",
+	[Key.commentsCount]: "komentar",
 
 	[Key.themeColor]: "Warna Tema",
 

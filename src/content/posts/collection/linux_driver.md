@@ -107,4 +107,8 @@ void iounmap(void *addr);
 
 ### 内存映射
 
-remap_page_range函数的功能是构造用于映射一段物理地址的新页表，实现了内核空间与用户空间的映射
+remap_page_range函数的功能是构造用于映射一段物理地址的新页表，实现了内核空间与用户空间的映射.
+
+
+### 块设备
+块设备也以与字符设备register_chrdev、unregister_chrdev函数类似的方法进行设备的注册与释放。但是，register_chrdev使用一个向file_operations结构的指针，而register_blkdev则使用block_device_operations结构的指针，其中定义的open、release和ioctl方法和字符设备的对应方法相同，但未定义read或者write操作。这是因为，所有涉及到块设备的I/O通常由系统进行缓冲处理。块驱动程序最终必须提供完成实际块I/O操作的机制，在Linux中，用于这些I/O操作的方法称为"request（请求）"。在块设备的注册过程中，需要初始化request队列，这一动作通过blk_init_queue来完成，blk_init_queue函数建立队列，并将该驱动程序的request函数关联到队列。在模块的清除阶段，应调用blk_cleanup_queue函数。

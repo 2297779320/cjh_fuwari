@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import path from "node:path";
 import { Icon } from "astro-icon/components";
+import { commentConfig } from "src/config";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import { getDir } from "../utils/url-utils";
@@ -21,6 +22,7 @@ interface Props {
 	description: string;
 	draft: boolean;
 	style: string;
+	pinned?: boolean;
 }
 const {
 	entry,
@@ -51,6 +53,9 @@ const { remarkPluginFrontmatter } = await entry.render();
         before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
         before:absolute before:top-[35px] before:left-[18px] before:hidden md:before:block
         ">
+            {entry.data.pinned &&
+                <Icon class="inline-block text-[1.2rem] text-[var(--primary)] mr-1 align-middle translate-y-[-2px]" name="material-symbols:push-pin" />
+            }
             {title}
             <Icon class="inline text-[2rem] text-[var(--primary)] md:hidden translate-y-0.5 absolute" name="material-symbols:chevron-right-rounded" ></Icon>
             <Icon class="text-[var(--primary)] text-[2rem] transition hidden md:inline absolute translate-y-0.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0" name="material-symbols:chevron-right-rounded"></Icon>
@@ -64,7 +69,7 @@ const { remarkPluginFrontmatter } = await entry.render();
             { description || remarkPluginFrontmatter.excerpt }
         </div>
 
-        <!-- word count and read time  -->
+        <!-- word count, read time and comment count  -->
         <div class="text-sm text-black/30 dark:text-white/30 flex gap-4 transition">
             <div>
                 {remarkPluginFrontmatter.words} {" " + i18n(remarkPluginFrontmatter.words === 1 ? I18nKey.wordCount : I18nKey.wordsCount)}
@@ -73,8 +78,16 @@ const { remarkPluginFrontmatter } = await entry.render();
             <div>
                 {remarkPluginFrontmatter.minutes} {" " + i18n(remarkPluginFrontmatter.minutes === 1 ? I18nKey.minuteCount : I18nKey.minutesCount)}
             </div>
+            {commentConfig.enable && (
+                    <>
+                        <div>|</div>
+                        <span class="comment-count" data-path={url}>
+                        <span>0</span>
+                        <span>{i18n(I18nKey.commentsCount)}</span>
+                    </span>
+                    </>
+            )}
         </div>
-
     </div>
 
     {hasCover && <a href={url} aria-label={title}

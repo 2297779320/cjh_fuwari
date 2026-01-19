@@ -5,6 +5,9 @@ export const ko: Translation = {
 	[Key.home]: "홈",
 	[Key.about]: "소개",
 	[Key.archive]: "아카이브",
+	[Key.images]: "이미지",
+	[Key.links]: "링크",
+	[Key.feed]: "친구 피드",
 	[Key.search]: "검색",
 
 	[Key.tags]: "태그",
@@ -23,6 +26,8 @@ export const ko: Translation = {
 	[Key.minutesCount]: "분",
 	[Key.postCount]: "게시물",
 	[Key.postsCount]: "게시물",
+	[Key.commentCount]: "댓글",
+	[Key.commentsCount]: "댓글",
 
 	[Key.themeColor]: "테마 색상",
 

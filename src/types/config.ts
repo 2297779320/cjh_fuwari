@@ -24,6 +24,7 @@ export type SiteConfig = {
 		enable: boolean;
 		src: string;
 		position?: "top" | "center" | "bottom";
+		type?: "image" | "video"; // 支持图片或视频格式
 		credit: {
 			enable: boolean;
 			text: string;
@@ -36,6 +37,15 @@ export type SiteConfig = {
 	};
 
 	favicon: Favicon[];
+
+	clarity: {
+		enable: boolean;
+		projectId: string;
+	};
+
+	musicPlayer: {
+		enable: boolean;
+	};
 };
 
 export type Favicon = {
@@ -54,6 +64,7 @@ export type NavBarLink = {
 	name: string;
 	url: string;
 	external?: boolean;
+	children?: (NavBarLink | LinkPreset)[]; // 支持子菜单，可以是NavBarLink或LinkPreset
 };
 
 export type NavBarConfig = {

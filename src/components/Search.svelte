@@ -12,9 +12,7 @@ let result: SearchResult[] = [];
 let isSearching = false;
 let pagefindLoaded = false;
 let initialized = false;
-let timeout: NodeJS.Timeout;
 
-// 模拟搜索结果
 const fakeResult: SearchResult[] = [
 	{
 		url: url("/"),
@@ -50,20 +48,17 @@ const setPanelVisibility = (show: boolean, isDesktop: boolean): void => {
 };
 
 const search = async (keyword: string, isDesktop: boolean): Promise<void> => {
-	clearTimeout(timeout);
-	timeout = setTimeout(() => {
-		if (!keyword) {
-			setPanelVisibility(false, isDesktop);
-			result = [];
-			return;
-		}
+	if (!keyword) {
+		setPanelVisibility(false, isDesktop);
+		result = [];
+		return;
+	}
 
-		if (!initialized) {
-			return;
-		}
+	if (!initialized) {
+		return;
+	}
 
-		isSearching = true;
-	}, 300);
+	isSearching = true;
 
 	try {
 		let searchResults: SearchResult[] = [];

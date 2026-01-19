@@ -5,6 +5,9 @@ export const th: Translation = {
 	[Key.home]: "หน้าแรก",
 	[Key.about]: "เกี่ยวกับ",
 	[Key.archive]: "คลัง",
+	[Key.images]: "รูปภาพ",
+	[Key.links]: "ลิงก์",
+	[Key.feed]: "ฟีดเพื่อน",
 	[Key.search]: "ค้นหา",
 
 	[Key.tags]: "ป้ายกำกับ",
@@ -23,6 +26,8 @@ export const th: Translation = {
 	[Key.minutesCount]: "นาที",
 	[Key.postCount]: "โพสต์",
 	[Key.postsCount]: "โพสต์",
+	[Key.commentCount]: "ความคิดเห็น",
+	[Key.commentsCount]: "ความคิดเห็น",
 
 	[Key.themeColor]: "สีของธีม",
 

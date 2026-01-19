@@ -18,7 +18,11 @@ export const siteConfig: SiteConfig = {
 	banner: {
 		enable: true,
 		src: "https://www.loliapi.com/acg/", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+		// 如果要使用MP4视频，可以这样配置：
+		// src: "/videos/banner-video.mp4", // 视频文件放在 public/videos/ 目录下
+		// type: "video", // 设置为视频类型
 		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
+		type: "image", // Support 'image' or 'video' format
 		credit: {
 			enable: false, // Display the credit text of the banner image
 			text: "", // Credit text to be displayed
@@ -31,12 +35,19 @@ export const siteConfig: SiteConfig = {
 	},
 	favicon: [
 		// Leave this array empty to use the default favicon
-		// {
-		//   src: '/favicon/icon.png',    // Path of the favicon, relative to the /public directory
-		//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
-		// }
+		{
+			src: "/favicon/logo-32.ico", // Path of the favicon, relative to the /public directory
+			theme: "light", // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
+			sizes: "32x32", // (Optional) Size of the favicon, set only if you have favicons of different sizes
+		},
 	],
+	clarity: {
+		enable: false, // 是否启用 Microsoft Clarity 分析
+		projectId: "", // Clarity 项目 ID
+	},
+	musicPlayer: {
+		enable: true, // 是否启用音乐播放器
+	},
 };
 
 export const navBarConfig: NavBarConfig = {
@@ -77,7 +88,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/saicaca/fuwari",
+			url: "https://github.com/2297779320/cjh_fuwari",
 		},
 	],
 };
@@ -86,6 +97,16 @@ export const licenseConfig: LicenseConfig = {
 	enable: true,
 	name: "CC BY-NC-SA 4.0",
 	url: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+};
+
+export const commentConfig = {
+	enable: false,
+	provider: "twikoo",
+	twikoo: {
+		envId: "", // 移除末尾的斜杠
+		region: "",
+		lang: "zh-CN",
+	},
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
