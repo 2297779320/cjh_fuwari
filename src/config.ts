@@ -65,6 +65,18 @@ export const navBarConfig: NavBarConfig = {
 			url: "https://www.loliapi.com/",
 			external: true, // Show an external link icon and will open in a new tab
 		},
+		{
+			name: "其他",
+			url: "/content/",
+			children: [
+				// LinkPreset.Images, // 如果没有lsky.pro图床，则注释掉 https://docs.lsky.pro/archive/free/v2/
+				{
+					name: "网站监控",
+					url: "https://stats.uptimerobot.com/f3bIMzwfwF",
+					external: true,
+				},
+			],
+		},
 	],
 };
 
