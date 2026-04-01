@@ -1,6 +1,6 @@
 ---
 title: 律师的二十一条军规
-published: 2026-2-15
+published: 2026-02-15
 description: '看律师辩论魔怔的后果'
 image: 'https://www.loliapi.com/bg/'
 tags: [律师]

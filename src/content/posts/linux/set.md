@@ -1,6 +1,6 @@
 ---
 title: 软件开发架构
-published: 2026-2-16
+published: 2026-02-16
 description: ''
 image: 'https://www.loliapi.com/bg/'
 tags: [linux]
