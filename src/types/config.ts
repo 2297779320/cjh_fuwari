@@ -46,6 +46,10 @@ export type SiteConfig = {
 	musicPlayer: {
 		enable: boolean;
 	};
+
+	live2d?: {
+		enable: boolean;
+	};
 };
 
 export type Favicon = {

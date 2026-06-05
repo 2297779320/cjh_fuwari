@@ -4,6 +4,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import ConfigCarrier from "@components/ConfigCarrier.astro";
+import Live2D from "@components/Live2D.astro";
 import { profileConfig, siteConfig } from "@/config";
 import {
 	AUTO_MODE,
@@ -175,6 +176,9 @@ const bannerOffset =
 		{siteConfig.musicPlayer.enable && (
 			<div id="player" class="aplayer"></div>
 		)}
+
+		{/* Live2D 看板娘 */}
+		<Live2D />
 
 		<!-- increase the page height during page transition to prevent the scrolling animation from jumping -->
 		<div id="page-height-extend" class="hidden h-[300vh]"></div>

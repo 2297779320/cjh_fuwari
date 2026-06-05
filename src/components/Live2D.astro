@@ -1,0 +1,106 @@
+---
+import { siteConfig } from "@/config";
+
+const live2d = siteConfig.live2d;
+if (!live2d?.enable) return null;
+---
+
+<style is:global>
+	/* 覆盖博客全局样式，确保 Live2D 看板娘正常显示 */
+	#waifu {
+		position: fixed !important;
+		bottom: 0 !important;
+		left: 0 !important;
+		z-index: 998 !important;
+		transform: none !important;
+		transition: none !important;
+	}
+
+	#waifu-tips {
+		position: absolute !important;
+		width: 250px !important;
+		min-height: 70px !important;
+		margin: -30px 20px !important;
+		background-color: var(--card-bg) !important;
+		border: 1px solid var(--line-divider) !important;
+		color: var(--deep-text) !important;
+		box-shadow: 0 3px 15px 2px rgba(0, 0, 0, 0.1) !important;
+	}
+
+	#waifu-tips span {
+		color: var(--primary) !important;
+	}
+
+	#waifu-tool svg {
+		fill: var(--btn-content) !important;
+	}
+
+	#waifu-tool svg:hover {
+		fill: var(--primary) !important;
+	}
+
+	#waifu-toggle {
+		background-color: var(--primary) !important;
+	}
+
+	#waifu-toggle svg {
+		fill: white !important;
+	}
+
+	#live2d {
+		width: 300px !important;
+		height: 300px !important;
+		position: relative !important;
+		cursor: grab !important;
+	}
+
+	#waifu-canvas {
+		width: 300px !important;
+		height: 300px !important;
+	}
+
+	#waifu-tool {
+		position: absolute !important;
+		top: 70px !important;
+		right: -10px !important;
+	}
+
+	#waifu-toggle {
+		position: fixed !important;
+		bottom: 66px !important;
+		left: 0 !important;
+		z-index: 999 !important;
+	}
+
+	@media (max-width: 768px) {
+		#waifu {
+			transform: scale(0.5) !important;
+			transform-origin: bottom left !important;
+		}
+		#waifu-tips {
+			display: none !important;
+		}
+	}
+
+	@media (max-width: 480px) {
+		#waifu {
+			display: none !important;
+		}
+	}
+</style>
+
+<script is:inline>
+	(function () {
+		if (window.__live2dLoaded) return;
+		window.__live2dLoaded = true;
+
+		var s = document.createElement("script");
+		s.src =
+			"https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.1/dist/autoload.js";
+		s.async = true;
+		s.onerror = function () {
+			console.warn("[Live2D] autoload.js 加载失败");
+		};
+		document.head.appendChild(s);
+	})();
+</script>

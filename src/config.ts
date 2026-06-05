@@ -48,6 +48,9 @@ export const siteConfig: SiteConfig = {
 	musicPlayer: {
 		enable: true, // 是否启用音乐播放器
 	},
+	live2d: {
+		enable: true, // 启用 Live2D 看板娘（左下角）
+	},
 };
 
 export const navBarConfig: NavBarConfig = {
