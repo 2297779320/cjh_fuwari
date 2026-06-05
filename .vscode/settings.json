@@ -18,5 +18,7 @@
     "quickfix.biome": "always",
     "source.organizeImports.biome": "always"
   },
-  "frontMatter.dashboard.openOnStart": false
+  "frontMatter.dashboard.openOnStart": false,
+  "local-comment.storage.commentsConfig": "comments.json",
+  "local-comment.storage.bookmarksConfig": "bookmarks.json"
 }
