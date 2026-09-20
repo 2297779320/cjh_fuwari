@@ -2,7 +2,7 @@
 
 ## Project
 
-Fuwari — Astro-based static blog template (Chinese-language personal blog deployed to Vercel). Forked from [saicaca/fuwari](https://github.com/saicaca/fuwari).
+Fuwari — Astro-based static blog template (Chinese-language personal blog deployed to GitHub Pages at `https://2297779320.github.io/cjh_fuwari/` via `.github/workflows/deploy-pages.yml`; formerly Vercel). Forked from [saicaca/fuwari](https://github.com/saicaca/fuwari).
 
 ## Commands
 
