@@ -8,16 +8,7 @@ category: '瑞芯微'
 draft: false
 lang: 'zh-CN'
 ---
----
-title: rk_libs 设计解析：链路式媒体中间件与从零复现指南
-published: 2026-09-20
-description: '基于 rk_libs 仓库源码的深度解析：Link 框架的注册/创建/绑定机制、拉模型流水线、对象池零拷贝数据面、六条工程基线，以及一套可照搭的 minilink 复现骨架与源码真实缺陷警示。'
-image: 'https://www.loliapi.com/bg/'
-tags: [Rockchip, C语言, 多媒体, 架构设计]
-category: '瑞芯微'
-draft: false
-lang: 'zh-CN'
----
+
 # rk_libs：一套 Rockchip 平台的「链路式」媒体中间件 —— 设计解析与从零复现指南
 
 > 本文基于 `rk3588/rk_libs` 仓库源码写成。目标是：**读懂它的设计**，并给出**一套可以照着重新搭一遍的骨架**。
