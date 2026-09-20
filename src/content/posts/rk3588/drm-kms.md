@@ -9,7 +9,7 @@ draft: false
 lang: 'zh-CN'
 ---
 
-前阵子精读了 txp 的 V4L2 驱动对象模型一文（见[上篇笔记](/posts/linux/v4l2-driver-model/)），这次是他的续作——Rockchip 平台 DRM/KMS 显示驱动入门教程。原文五篇三十六节，依据六份 Rockchip 官方开发指南写成，从显示链路一路讲到点屏调试。这篇笔记覆盖全部五篇的骨架，观点归原作者，原文链接见文末。
+前阵子精读了 txp 的 V4L2 驱动对象模型一文（见[上篇笔记](/cjh_fuwari/posts/linux/v4l2-driver-model/)），这次是他的续作——Rockchip 平台 DRM/KMS 显示驱动入门教程。原文五篇三十六节，依据六份 Rockchip 官方开发指南写成，从显示链路一路讲到点屏调试。这篇笔记覆盖全部五篇的骨架，观点归原作者，原文链接见文末。
 
 ## 一、总架构：从像素到屏幕
 
@@ -127,5 +127,5 @@ dmesg | grep -Ei 'iommu|page fault|vop|drm'                   # IOMMU 故障
 ## 参考资料
 
 - 原文：[Rockchip 平台 DRM/KMS 显示驱动入门教程 — txp@飞一样的成长（微信公众号）](https://mp.weixin.qq.com/s/dAtjyZX9UeO0DmW3TKsjCQ)
-- 姊妹篇笔记：[《V4L2 驱动对象模型精读》](/posts/linux/v4l2-driver-model/)
-- 站内相关：[《rk3588使用》](/posts/rk3588/rk3588/)（RK MPP 媒体处理）
+- 姊妹篇笔记：[《V4L2 驱动对象模型精读》](/cjh_fuwari/posts/linux/v4l2-driver-model/)
+- 站内相关：[《rk3588使用》](/cjh_fuwari/posts/rk3588/rk3588/)（RK MPP 媒体处理）

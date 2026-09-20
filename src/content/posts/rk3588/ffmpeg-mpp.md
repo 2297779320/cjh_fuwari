@@ -15,7 +15,7 @@ lang: 'zh-CN'
 
 用原版 ffmpeg 的 `fbdev` 抓帧缓冲录屏，配 libx265 做 H.265 **软编码**，编码全靠 CPU 硬扛，实测占用率高达 97%，其他业务直接卡顿。而 RK3568 内部有 VPU 硬件编码器，把 H.265 编码交给 VPU（走 Rockchip MPP），CPU 占用降到 30% 左右，界面流畅性明显改善。
 
-一句话原理：**x265 吃 CPU，rkmpp 吃 VPU**。对嵌入式设备来说，CPU 省下来才能干别的活。这也是站内[《rk3588使用》](/posts/rk3588/rk3588/)里 MPP 媒体处理平台的同一套思路——只是这次从 C API 换到了 ffmpeg 命令行。
+一句话原理：**x265 吃 CPU，rkmpp 吃 VPU**。对嵌入式设备来说，CPU 省下来才能干别的活。这也是站内[《rk3588使用》](/cjh_fuwari/posts/rk3588/rk3588/)里 MPP 媒体处理平台的同一套思路——只是这次从 C API 换到了 ffmpeg 命令行。
 
 ## 准备环境
 
@@ -143,7 +143,7 @@ libx265.so.199       =>  全靠 CPU
 
 从运行日志还能读到几个有价值的细节：
 
-- MPP 自动做了 stride 对齐：`set prep cfg w:h [1280:800] stride [1280:832]`——宽度对齐到 832，这与站内[零拷贝精读](/posts/rk3588/zero-copy/)里讲的 stride ≠ width 完全对应
+- MPP 自动做了 stride 对齐：`set prep cfg w:h [1280:800] stride [1280:832]`——宽度对齐到 832，这与站内[零拷贝精读](/cjh_fuwari/posts/rk3588/zero-copy/)里讲的 stride ≠ width 完全对应
 - 码控默认 CBR 2 Mbps、GOP 250
 - 有一条提示值得 RK3568 用户注意：`Only rk3588's h264/265/jpeg and rk3576's h264/265 encoder can use frame parallel`——RK3568 的编码器不支持帧级并行，性能天花板比 RK3588 低，但对付 1080p 录屏足够
 
@@ -165,4 +165,4 @@ ps ax | grep ffmpeg
 ## 参考资料
 
 - 原文：[编译支持RK3568芯片mpp硬编码的ffmpeg — YouShun@You菜You爱玩（微信公众号）](https://mp.weixin.qq.com/s/7OEtsNcQHVOPZuSSKzgpfw)
-- 站内相关：[《rk3588使用》](/posts/rk3588/rk3588/)（MPP 媒体处理）、[《Rockchip 零拷贝技术精读》](/posts/rk3588/zero-copy/)、[《Rockchip DRM/KMS 显示驱动精读》](/posts/rk3588/drm-kms/)
+- 站内相关：[《rk3588使用》](/cjh_fuwari/posts/rk3588/rk3588/)（MPP 媒体处理）、[《Rockchip 零拷贝技术精读》](/cjh_fuwari/posts/rk3588/zero-copy/)、[《Rockchip DRM/KMS 显示驱动精读》](/cjh_fuwari/posts/rk3588/drm-kms/)

@@ -9,7 +9,7 @@ draft: false
 lang: 'zh-CN'
 ---
 
-这是精读 txp 系列的第三篇了（前两篇是 [V4L2 驱动对象模型](/posts/linux/v4l2-driver-model/)和 [Rockchip DRM/KMS](/posts/rk3588/drm-kms/)）。这篇《对讲完整技术拆解》从产品选型一路讲到量产测试，19 章 1.5 万字，把"把声音传到另一端"这句话背后的工程量拆得清清楚楚。本篇提炼骨架，观点归原作者，原文链接见文末。
+这是精读 txp 系列的第三篇了（前两篇是 [V4L2 驱动对象模型](/cjh_fuwari/posts/linux/v4l2-driver-model/)和 [Rockchip DRM/KMS](/cjh_fuwari/posts/rk3588/drm-kms/)）。这篇《对讲完整技术拆解》从产品选型一路讲到量产测试，19 章 1.5 万字，把"把声音传到另一端"这句话背后的工程量拆得清清楚楚。本篇提炼骨架，观点归原作者，原文链接见文末。
 
 ## 一、选型先行：先确定"做哪一种对讲"
 
@@ -96,5 +96,5 @@ RTP 只提供序号、媒体时间戳、SSRC 这些"信息"，**不保证**不�
 ## 参考资料
 
 - 原文：[对讲方案选型、硬件链路、音频引擎、RTP/WebRTC，到弱网、AEC 与量产测试的完整技术拆解 — txp@飞一样的成长（微信公众号）](https://mp.weixin.qq.com/s/YmO4c49FFJWza8ESHVTeTw)
-- 姊妹篇笔记：[《V4L2 驱动对象模型精读》](/posts/linux/v4l2-driver-model/)、[《Rockchip DRM/KMS 显示驱动精读》](/posts/rk3588/drm-kms/)
-- 站内相关：[《alsa 学习》](/posts/linux/alsa/)
+- 姊妹篇笔记：[《V4L2 驱动对象模型精读》](/cjh_fuwari/posts/linux/v4l2-driver-model/)、[《Rockchip DRM/KMS 显示驱动精读》](/cjh_fuwari/posts/rk3588/drm-kms/)
+- 站内相关：[《alsa 学习》](/cjh_fuwari/posts/linux/alsa/)

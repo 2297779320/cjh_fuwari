@@ -123,4 +123,4 @@ arm-linux-gnueabihf-addr2line -e vmlinux 0xc0123456
 ## 参考资料
 
 - 原文：[Linux启动流程 — Psyducking@嵌入式软件客栈（微信公众号）](https://mp.weixin.qq.com/s/xMRumYjJFwQ1JVWqAFKCTA)
-- 站内相关：[《Rockchip DRM/KMS 显示驱动精读》](/posts/rk3588/drm-kms/)、[《Rockchip 零拷贝技术精读》](/posts/rk3588/zero-copy/)
+- 站内相关：[《Rockchip DRM/KMS 显示驱动精读》](/cjh_fuwari/posts/rk3588/drm-kms/)、[《Rockchip 零拷贝技术精读》](/cjh_fuwari/posts/rk3588/zero-copy/)

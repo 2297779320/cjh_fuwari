@@ -9,7 +9,7 @@ draft: false
 lang: 'zh-CN'
 ---
 
-深研集系列第二篇精读（第一篇是[《ALSA/TinyALSA 与内核音频驱动》](/posts/linux/alsa-tinyalsa-asoc/)）。之前那篇[《V4L2 驱动对象模型精读》](/posts/linux/v4l2-driver-model/)讲的是采集/Sensor 侧的对象模型，这篇往下走——同一个 V4L2 子系统的另一半：**视频编解码**。VPU 不是采集设备，它怎么塞进 V4L2 框架？Stateful 和 Stateless 两种驱动模型差在哪？观点归原作者，原文见文末。
+深研集系列第二篇精读（第一篇是[《ALSA/TinyALSA 与内核音频驱动》](/cjh_fuwari/posts/linux/alsa-tinyalsa-asoc/)）。之前那篇[《V4L2 驱动对象模型精读》](/cjh_fuwari/posts/linux/v4l2-driver-model/)讲的是采集/Sensor 侧的对象模型，这篇往下走——同一个 V4L2 子系统的另一半：**视频编解码**。VPU 不是采集设备，它怎么塞进 V4L2 框架？Stateful 和 Stateless 两种驱动模型差在哪？观点归原作者，原文见文末。
 
 ## 为什么编解码用 V4L2：M2M 扩展
 
@@ -38,7 +38,7 @@ V4L2 最初为摄像头设计，核心抽象是"设备节点 + ioctl 控制数�
 - **STREAMOFF 是核弹**：把该队列**所有** buffer 强制拉回 DEQUEUED，不管它们在 QUEUED 还是 ACTIVE。这就是 seek 昂贵的原因——不是解码慢，是整条 buffer pipeline 被清空重建。Android MediaCodec 的 `flush()` 底层就是 STREAMOFF + STREAMON，in-flight buffer 全部作废，解码器要从下一个 IDR 重来。码流 IDR 间隔长的直播流，seek 延迟会非常明显
 - **DONE 状态用户不可见**：DQBUF 时 buffer 没到 DONE 就阻塞（或非阻塞模式返回 -EAGAIN）
 
-与 DMA-BUF 的集成点：`V4L2_MEMORY_DMABUF` 时 QBUF 传 fd，驱动经 `dma_buf_attach` + `map_attachment` 拿物理地址配给 VPU——站内[零拷贝精读](/posts/rk3588/zero-copy/)讲的 attach/map 和 fence 同步就发生在这个环节。
+与 DMA-BUF 的集成点：`V4L2_MEMORY_DMABUF` 时 QBUF 传 fd，驱动经 `dma_buf_attach` + `map_attachment` 拿物理地址配给 VPU——站内[零拷贝精读](/cjh_fuwari/posts/rk3588/zero-copy/)讲的 attach/map 和 fence 同步就发生在这个环节。
 
 ## Stateful：驱动掌控一切
 
@@ -117,10 +117,10 @@ ioctl(req_fd, MEDIA_REQUEST_IOC_QUEUE);
 
 两种模型不是对错而是工程权衡：硬件有强固件和完整码流解析器，stateful 是自然选择；想进 mainline 或硬件本就是"无脑计算单元"，stateless + Request API 是正路。作者预判 Android 16/17 上 stateless 支持会从可选变成 CTS 要求。
 
-这篇和站内几篇拼起来正好是完整的 V4L2 图谱：[对象模型篇](/posts/linux/v4l2-driver-model/)是采集侧骨架，本篇是编解码侧的 M2M/Stateful/Stateless，[零拷贝篇](/posts/rk3588/zero-copy/)讲 buffer 在 V4L2/VPU/Display 间怎么流转——三篇合读，从 Sensor 到 VPU 到屏幕的整条视频链路就通了。
+这篇和站内几篇拼起来正好是完整的 V4L2 图谱：[对象模型篇](/cjh_fuwari/posts/linux/v4l2-driver-model/)是采集侧骨架，本篇是编解码侧的 M2M/Stateful/Stateless，[零拷贝篇](/cjh_fuwari/posts/rk3588/zero-copy/)讲 buffer 在 V4L2/VPU/Display 间怎么流转——三篇合读，从 Sensor 到 VPU 到屏幕的整条视频链路就通了。
 
 ## 参考资料
 
 - 原文：[V4L2 视频编解码驱动框架 — 深研集（微信公众号）](https://mp.weixin.qq.com/s/V85b4A52hqjnyVsjhODsPw)
 - 原文引用的一手信源：[V4L2 Stateless Decoder 接口文档](https://www.kernel.org/doc/html/latest/userspace-api/media/v4l/dev-stateless-decoder.html)、[M2M 接口文档](https://www.kernel.org/doc/html/latest/userspace-api/media/v4l/dev-mem2mem.html)、[Request API 文档](https://www.kernel.org/doc/html/latest/userspace-api/media/mediactl/request-api.html)
-- 站内相关：[《V4L2 驱动对象模型精读》](/posts/linux/v4l2-driver-model/)、[《Rockchip 零拷贝技术精读》](/posts/rk3588/zero-copy/)、[《ALSA/TinyALSA 与内核音频驱动精读》](/posts/linux/alsa-tinyalsa-asoc/)
+- 站内相关：[《V4L2 驱动对象模型精读》](/cjh_fuwari/posts/linux/v4l2-driver-model/)、[《Rockchip 零拷贝技术精读》](/cjh_fuwari/posts/rk3588/zero-copy/)、[《ALSA/TinyALSA 与内核音频驱动精读》](/cjh_fuwari/posts/linux/alsa-tinyalsa-asoc/)

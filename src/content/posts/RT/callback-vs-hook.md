@@ -103,4 +103,4 @@ FreeRTOS 钩子的共同点：挂载位置内核定死、全系统仅一份、�
 ## 参考资料
 
 - 原文：[搞嵌入式这么多年，你真的分清回调函数和钩子函数了吗？ — 一枚嵌入式码农（微信公众号）](https://mp.weixin.qq.com/s/mPLhbhHCP4DnhBQ8pOngVw)
-- 站内相关：[《myCommon 框架代码审查实践》](/posts/myCommon/code-review-and-fix/)、[《rtthread rtos 学习》](/posts/RT/RT/)
+- 站内相关：[《myCommon 框架代码审查实践》](/cjh_fuwari/posts/myCommon/code-review-and-fix/)、[《rtthread rtos 学习》](/cjh_fuwari/posts/RT/RT/)

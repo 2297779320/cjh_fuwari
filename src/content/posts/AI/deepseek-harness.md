@@ -15,7 +15,7 @@ AI 分类再添一篇——杨比耶@比耶Ai落地的《DeepSeek Harness 安装
 
 原文的核心概念一句话：**AI Agent = 大模型 + Harness**。大模型是野马，负责思考和生成；Harness（工具、技能、操作权限这一整套驾驭系统）是缰绳和马鞭，让 AI 在真实任务里不跑偏。
 
-为什么这个概念值得单独强调？因为**同一个模型装不同 Harness，Agent 的能力差距很大**——模型决定下限，Harness 决定上限。与 Codex、Workbody 这类成熟 Agent 产品的区别在于：后者是"骑平台训练好的马"，而 DeepSeek Harness 把"跑马场"也开放了，支持用户自己定制专属 Agent。这和站内[《Claude Code 应用与实践精读》](/posts/ai/claude-code-playbook/)里"harness 比模型重要"的结论完全相通——外围系统的搭建正在取代模型选型，成为 Agent 效果的主要变量。
+为什么这个概念值得单独强调？因为**同一个模型装不同 Harness，Agent 的能力差距很大**——模型决定下限，Harness 决定上限。与 Codex、Workbody 这类成熟 Agent 产品的区别在于：后者是"骑平台训练好的马"，而 DeepSeek Harness 把"跑马场"也开放了，支持用户自己定制专属 Agent。这和站内[《Claude Code 应用与实践精读》](/cjh_fuwari/posts/ai/claude-code-playbook/)里"harness 比模型重要"的结论完全相通——外围系统的搭建正在取代模型选型，成为 Agent 效果的主要变量。
 
 ## 三种安装方式怎么选
 
@@ -47,4 +47,4 @@ API Key 是唯一有实质门槛的环节，两条必须记住的提醒：
 ## 参考资料
 
 - 原文：[DeepSeek Harness 安装入门教程 — 杨比耶@比耶Ai落地（微信公众号）](https://mp.weixin.qq.com/s/PaQjDkqqI57uyFf8inm3rw)
-- 站内相关：[《Claude Code 应用与实践精读》](/posts/ai/claude-code-playbook/)
+- 站内相关：[《Claude Code 应用与实践精读》](/cjh_fuwari/posts/ai/claude-code-playbook/)

@@ -9,7 +9,7 @@ draft: false
 lang: 'zh-CN'
 ---
 
-txp 系列第四篇精读。这篇《rk平台上的零拷贝技术到底是咋回事？》共 33 章，从原理一路逐行挖到 RKCIF 内核源码和 MPP 工程整合，是四篇里最"内核"的一篇。它正好把前两篇的拼图补齐：[V4L2 对象模型](/posts/linux/v4l2-driver-model/)讲了框架，[DRM/KMS](/posts/rk3588/drm-kms/)讲了显示，[rk3588 MPP](/posts/rk3588/rk3588/)讲了编解码——而这篇讲的 DMA-BUF 就是把三者串成零拷贝数据面的那根线。观点归原作者，原文见文末。
+txp 系列第四篇精读。这篇《rk平台上的零拷贝技术到底是咋回事？》共 33 章，从原理一路逐行挖到 RKCIF 内核源码和 MPP 工程整合，是四篇里最"内核"的一篇。它正好把前两篇的拼图补齐：[V4L2 对象模型](/cjh_fuwari/posts/linux/v4l2-driver-model/)讲了框架，[DRM/KMS](/cjh_fuwari/posts/rk3588/drm-kms/)讲了显示，[rk3588 MPP](/cjh_fuwari/posts/rk3588/rk3588/)讲了编解码——而这篇讲的 DMA-BUF 就是把三者串成零拷贝数据面的那根线。观点归原作者，原文见文末。
 
 ## 一、零拷贝的本质
 
@@ -108,5 +108,5 @@ fd → struct dma_buf（后备存储 + 引用计数）
 ## 参考资料
 
 - 原文：[rk平台上的零拷贝技术到底是咋回事？ — txp@飞一样的成长（微信公众号）](https://mp.weixin.qq.com/s/06kfE9frnfo5bY92bHyHEw)
-- 姊妹篇笔记：[《V4L2 驱动对象模型精读》](/posts/linux/v4l2-driver-model/)、[《Rockchip DRM/KMS 显示驱动精读》](/posts/rk3588/drm-kms/)、[《嵌入式音频对讲技术精读》](/posts/audio/intercom/)
-- 站内相关：[《rk3588使用》](/posts/rk3588/rk3588/)（RK MPP 媒体处理）
+- 姊妹篇笔记：[《V4L2 驱动对象模型精读》](/cjh_fuwari/posts/linux/v4l2-driver-model/)、[《Rockchip DRM/KMS 显示驱动精读》](/cjh_fuwari/posts/rk3588/drm-kms/)、[《嵌入式音频对讲技术精读》](/cjh_fuwari/posts/audio/intercom/)
+- 站内相关：[《rk3588使用》](/cjh_fuwari/posts/rk3588/rk3588/)（RK MPP 媒体处理）

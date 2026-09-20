@@ -9,7 +9,7 @@ draft: false
 lang: 'zh-CN'
 ---
 
-换一篇口味——leaffei 的 Linux 系统编程系列（这是第十一篇）里的《mmap 内存映射详解》。读它的动机很直接：站里[《V4L2 驱动对象模型》](/posts/linux/v4l2-driver-model/)和[《Rockchip 零拷贝精读》](/posts/rk3588/zero-copy/)反复出现 mmap，那是在内核侧看它；这篇回到用户态，把这个"一个系统调用解决三件事"的基础设施彻底讲透。观点归原作者，原文见文末。
+换一篇口味——leaffei 的 Linux 系统编程系列（这是第十一篇）里的《mmap 内存映射详解》。读它的动机很直接：站里[《V4L2 驱动对象模型》](/cjh_fuwari/posts/linux/v4l2-driver-model/)和[《Rockchip 零拷贝精读》](/cjh_fuwari/posts/rk3588/zero-copy/)反复出现 mmap，那是在内核侧看它；这篇回到用户态，把这个"一个系统调用解决三件事"的基础设施彻底讲透。观点归原作者，原文见文末。
 
 ## 一个系统调用，三件事
 
@@ -89,7 +89,7 @@ p[100] = 'X';   /* 直接改第 101 字节，没有 read/write 调用 */
 3. **跨进程可见性取决于读法**：写方 mmap 修改后，读方用 mmap 或普通 read 都能立即可见（都走 page cache）；但读方用 **O_DIRECT** 会绕过 page cache 直接读盘，可能与 writeback 进度不一致。关键点：page cache 是真正的"数据源"，要么大家都走它，要么用显式 `msync` 协议
 4. **MAP_FIXED 别乱用**：地址已被占用时会**覆盖已有映射**（栈、库代码），进程直接崩。5.1+ 内核用 `MAP_FIXED_NOREPLACE` 更安全：被占就失败，不覆盖
 5. **32 位地址空间限制**：只有 2~3GB，映射超大文件会失败；64 位用户态 128TB 无此忧
-6. **mmap 不等于零拷贝**——呼应站内[零拷贝精读](/posts/rk3588/zero-copy/)的误区一：mmap 之后再来一次 memcpy，仍然是一次整帧复制。mmap 消除的是 read/write 的那次拷贝，不是所有拷贝
+6. **mmap 不等于零拷贝**——呼应站内[零拷贝精读](/cjh_fuwari/posts/rk3588/zero-copy/)的误区一：mmap 之后再来一次 memcpy，仍然是一次整帧复制。mmap 消除的是 read/write 的那次拷贝，不是所有拷贝
 
 ## 总结速查
 
@@ -107,4 +107,4 @@ mmap 的价值不在"快"这个笼统印象，而在它把**文件、共享内�
 ## 参考资料
 
 - 原文：[linux系统编程（十一）：mmap内存映射详解 — leaffei@音视频修炼之旅（微信公众号）](https://mp.weixin.qq.com/s/eJBOWjz2Ej_xCsVSUb27Iw)
-- 站内相关：[《Rockchip 零拷贝技术精读》](/posts/rk3588/zero-copy/)（内核侧视角的 mmap/DMA-BUF）、[《V4L2 驱动对象模型精读》](/posts/linux/v4l2-driver-model/)
+- 站内相关：[《Rockchip 零拷贝技术精读》](/cjh_fuwari/posts/rk3588/zero-copy/)（内核侧视角的 mmap/DMA-BUF）、[《V4L2 驱动对象模型精读》](/cjh_fuwari/posts/linux/v4l2-driver-model/)

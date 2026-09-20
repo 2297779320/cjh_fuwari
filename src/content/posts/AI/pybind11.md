@@ -105,7 +105,7 @@ Python 侧就是 `p = clib.Point(); p.x = 3; p.dist()`。C 结构体没有成员
 
 **一、值语义 vs 引用**。`m.def` 返回 C++ 对象默认按值拷贝给 Python；想返回引用要用 `py::return_value_policy::reference`——但要清醒：引用不管理生命周期，C++ 侧对象销毁后 Python 侧就成了悬垂指针。局部变量返回引用是经典崩溃来源，拿不准就用 `reference_internal` 或干脆拷贝。
 
-**二、GIL 是全局的**。Python 对象的一切操作都要求持有 GIL。C++ 后台线程要回调 Python（比如进度通知），必须先 `py::gil_scoped_acquire`；反过来，绑定函数里要跑长 CPU 任务时，用 `py::gil_scoped_release` 把 GIL 放出去，避免卡死其他 Python 线程。这与站内[音频对讲精读](/posts/audio/intercom/)里"实时线程禁忌"是同构的思路——临界资源要显式管理。
+**二、GIL 是全局的**。Python 对象的一切操作都要求持有 GIL。C++ 后台线程要回调 Python（比如进度通知），必须先 `py::gil_scoped_acquire`；反过来，绑定函数里要跑长 CPU 任务时，用 `py::gil_scoped_release` 把 GIL 放出去，避免卡死其他 Python 线程。这与站内[音频对讲精读](/cjh_fuwari/posts/audio/intercom/)里"实时线程禁忌"是同构的思路——临界资源要显式管理。
 
 **三、异常自动映射**。C++ 异常抛到绑定边界会自动转 Python 异常（`std::exception` → RuntimeError），不用手写 try/catch。自定义错误类型用 `py::register_exception<T>` 注册映射。
 

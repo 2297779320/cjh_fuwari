@@ -9,7 +9,7 @@ draft: false
 lang: 'zh-CN'
 ---
 
-站里那篇[《音频开发》](/posts/linux/alsa/)记的是 ALSA-lib 用户态的基础用法，这篇往下走一层——精读深研集的《ALSA/TinyALSA 与内核音频驱动》，把"PCM 数据交给硬件"这个动作在内核里的最后一公里拆开看：ASoC 三层模型、DAPM 声明式电源管理、DMA 环形缓冲，外加两个实战排障案例。观点归原作者，原文见文末。
+站里那篇[《音频开发》](/cjh_fuwari/posts/linux/alsa/)记的是 ALSA-lib 用户态的基础用法，这篇往下走一层——精读深研集的《ALSA/TinyALSA 与内核音频驱动》，把"PCM 数据交给硬件"这个动作在内核里的最后一公里拆开看：ASoC 三层模型、DAPM 声明式电源管理、DMA 环形缓冲，外加两个实战排障案例。观点归原作者，原文见文末。
 
 ## 先分清两个世界：桌面 Linux 与 Android
 
@@ -117,10 +117,10 @@ echo 'file soc-dapm.c +p' > /sys/kernel/debug/dynamic_debug/control
 
 这条链路上每一层都在做减法：AudioFlinger 混音完给 HAL 干净的 PCM buffer，HAL 经 TinyALSA 写入内核 ring buffer，DMA 按节奏搬运，I2S 推到 Codec。作者对 DAPM 的评价我很有共鸣——声明式设计让驱动开发者只说"我有哪些模块、怎么连接"，框架自动推断最优电源状态，这在 Linux 内核子系统里是做得最好的之一。
 
-对照站内音频相关的内容：[《音频对讲精读》](/posts/audio/intercom/)里的 ALSA 参数调优（period/buffer/XRUN）正是本文 ring buffer 设计的应用侧；[《音频开发》](/posts/linux/alsa/)则是 ALSA-lib 用户态入口。三篇凑齐从用户态到内核的音频链路。
+对照站内音频相关的内容：[《音频对讲精读》](/cjh_fuwari/posts/audio/intercom/)里的 ALSA 参数调优（period/buffer/XRUN）正是本文 ring buffer 设计的应用侧；[《音频开发》](/cjh_fuwari/posts/linux/alsa/)则是 ALSA-lib 用户态入口。三篇凑齐从用户态到内核的音频链路。
 
 ## 参考资料
 
 - 原文：[ALSA/TinyALSA 与内核音频驱动 — 深研集（微信公众号）](https://mp.weixin.qq.com/s/sldtYIDYLgyAU5-Qc6PDSA)
 - 原文引用的一手信源：[kernel.org ALSA 文档](https://www.kernel.org/doc/html/latest/sound/index.html)、[ASoC 设计文档](https://www.kernel.org/doc/html/latest/sound/soc/index.html)、[TinyALSA 仓库](https://github.com/tinyalsa/tinyalsa)
-- 站内相关：[《音频开发》](/posts/linux/alsa/)、[《嵌入式音频对讲技术精读》](/posts/audio/intercom/)
+- 站内相关：[《音频开发》](/cjh_fuwari/posts/linux/alsa/)、[《嵌入式音频对讲技术精读》](/cjh_fuwari/posts/audio/intercom/)
