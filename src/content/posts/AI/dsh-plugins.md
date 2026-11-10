@@ -2,7 +2,7 @@
 title: DeepSeek Harness 插件生态精读：20 个插件的分类整理
 published: 2026-10-08
 updated: 2026-10-29
-description: '综合六篇 DSH 实测文章：插件按功能域分类整理（市场、效率、上下文、回退、能力扩展、观测），含实测勘误、装了又卸的三类反例、隐私风险提醒与选装建议。'
+description: '综合七篇 DSH 实测文章：插件按功能域分类整理（市场、效率、上下文、回退、能力扩展、观测），含实测勘误、装了又卸的三类反例、隐私风险提醒与选装建议。'
 image: 'https://www.loliapi.com/bg/'
 tags: [DeepSeek, AI Agent, DSH, 插件]
 category: 'AI'
@@ -225,6 +225,18 @@ dsh plugin --profile web add dsh-marketplace
 
 风险提醒（灵动篇的原话精神）：这几个动得更深的插件——写工作区文件的、打包整套环境的、能改框架版本的——装之前看一眼**出自谁手、最近更新是什么时候**。
 
+## 实操体验：从安装到上手的现场记录
+
+贾贾（前阿里友盟初创团队成员，裸辞做 AI 实战分享）的这篇提供了前六篇缺的视角——**一个普通用户从零装机、逐个上手的真实体验**。几个此前没有的信息点：
+
+**安装流程的实感**：DeepSeek 账号直接登录即可；新注册账号送 **6 元额度**（作者猜测是 1 美元的对标）；首次设置里有"工作详细度"三档（聚焦结果 / 关键细节 / 完整过程）——新手选聚焦结果，要定位问题的选后两档。作者顺手对比了 workbuddy：DSH 当时响应更快、界面更简洁。
+
+**新插件：DeepSeek-Balance-Whale-Widget（鲸鱼娘桌宠 + 余额记账）**——前六篇都没提过。右下角鲸鱼娘，点一下会叫唤，吐出的泡泡是 **DeepSeek API 余额和今日用量**；每轮对话结束弹出当次消耗与当日总消耗，可拖动吸附屏幕各处。记账页支持**多个 API 分别记账**（多模型用户可用），并有近七天逐日消耗回顾。她还总结了自定义角色图的提示词技巧：说明用途是侧边栏桌宠（控尺寸）、双眼与用户有交流（不出戏）、背景透明（观感）——默认鲸鱼娘换成自己生成的"秘书"立绘。她提了个产品建议也实在：单图还是差点意思，能做表情切换/动画就更好。
+
+**dsh-context 的实测发现**：她拿日常选题写作的对话跑了一轮分析——**上下文占用大头是工具结果输出和助手消息**，技能与工具定义占比也不小。如果上下文一直超标，把数据丢给模型让它想办法优化。多 agent 场景下还有"编队"页签看各子 agent 的上下文。
+
+**better-sidebar 的痛点验证**：底部工作栏可选文件目录 / Git / 子任务 / 侧边对话 / 终端；其中**终端最实用**——CLI 访问飞书、GitHub 这类外部平台时，在沙盒里授权很折腾，直接在对话窗里开终端授权就顺了。她还提了一个每个插件都适用的小提醒：**插件对界面有影响，装完都要重启客户端**再看效果，否则入口不出现。
+
 ## 写在最后
 
 三点整理时发现的事，装之前值得知道：
@@ -243,4 +255,5 @@ dsh plugin --profile web add dsh-marketplace
 - 原文四：[DeepSeek Harness 插件推荐与使用说明 — 舒文@编程拾录（微信公众号）](https://mp.weixin.qq.com/s/sTcdmeHJgkIcNu3ZqkL-tg)
 - 原文五：[DeepSeek Harness 不可错过的 12 款神器 — 江宇@智东西（微信公众号）](https://mp.weixin.qq.com/s/k9qYa9aeKMVZc0vvV45_gw)
 - 原文六：[DeepSeek Harness 进阶使用指南｜二十个必装插件（下） — 灵动Ai幻界（微信公众号）](https://mp.weixin.qq.com/s/Ovrkbtx7VqQrY3NjbPDvug)
+- 原文七：[Deepseek harness装上爆火插件秒变高达 — 贾贾@贾贾就爱AI（微信公众号）](https://mp.weixin.qq.com/s/gd6PB7gG6vNYYLsu3afojQ)
 - 站内相关：[《DeepSeek Harness 安装入门精读》](/posts/ai/deepseek-harness/)、[《Claude Code 应用与实践精读》](/posts/ai/claude-code-playbook/)
