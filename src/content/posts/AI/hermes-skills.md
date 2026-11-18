@@ -71,3 +71,7 @@ v0.23.1 官方说明里最贴近普通人的改动：**插件目录体积上限�
 
 - 原文：[Hermes Agent 先装这 53 个技能，升级没来也能干活 — One 掌柜@One的AI工具箱（微信公众号）](https://mp.weixin.qq.com/s/2jZe2M4pJ0kYz8uEL0wmZw)
 - 站内相关：[《Hermes 生态五项目精读》](/posts/ai/hermes-ecosystem/)、[《Hermes 多 Agent 方案精读》](/posts/ai/hermes-multi-agent/)、[《Oh My Hermes 编排精读》](/posts/ai/omh/)
+
+## Hermes 系列导航
+
+[生态五项目](/posts/ai/hermes-ecosystem/) · [多 Agent 方案](/posts/ai/hermes-multi-agent/) · [技能与插件](/posts/ai/hermes-skills/) · [自动化十配置](/posts/ai/hermes-automation/) · [OMH 编排](/posts/ai/omh/)

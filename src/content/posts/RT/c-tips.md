@@ -83,7 +83,7 @@ static const char *const k_err_names[] = { ERROR_TABLE(AS_NAME) };
 UART_Init(&uart1, &(UART_Config_t){ .baudrate = 115200, .data_bits = 8 });
 ```
 
-**坑**：生命周期只到所在代码块结束。驱动若把这个指针保存下来，函数返回后就是悬垂指针——与站内[《回调与钩子精读》](/posts/RT/callback-vs-hook/)里"指针不等于引用计数"是同一个坑。需要长期保存就在内部拷贝一份。C99 特性，C++ 不这么用。
+**坑**：生命周期只到所在代码块结束。驱动若把这个指针保存下来，函数返回后就是悬垂指针——与站内[《回调与钩子精读》](/posts/rt/callback-vs-hook/)里"指针不等于引用计数"是同一个坑。需要长期保存就在内部拷贝一份。C99 特性，C++ 不这么用。
 
 ## 技巧六：ARRAY_SIZE 和 STATIC_ASSERT，让表与枚举自动对齐
 
@@ -171,9 +171,9 @@ DEFINE_UART_ISR(3)
 
 ## 写在最后
 
-这十个技巧真正的主线不是"少写代码"，而是**把"改一处要同步改三处"的重复收敛成单一事实源**——指定初始化器收敛字段顺序、X-Macro 收敛清单、链接段收敛注册。对照站内[《CMake 交叉编译精读》](/posts/RT/cmake-cross-compile/)里"把构建约定收敛到一处"，是同一种工程直觉在不同层面的体现。
+这十个技巧真正的主线不是"少写代码"，而是**把"改一处要同步改三处"的重复收敛成单一事实源**——指定初始化器收敛字段顺序、X-Macro 收敛清单、链接段收敛注册。对照站内[《CMake 交叉编译精读》](/posts/rt/cmake-cross-compile/)里"把构建约定收敛到一处"，是同一种工程直觉在不同层面的体现。
 
 ## 参考资料
 
 - 原文：[这 10 个 C 语言技巧，让你的嵌入式代码量减少一半 — 嵌入式工程师之路（微信公众号）](https://mp.weixin.qq.com/s/1wUA8pS4fKE1Mz14bd7Q7g)
-- 站内相关：[《回调与钩子精读》](/posts/RT/callback-vs-hook/)、[《rk_libs 设计解析与复现指南》](/posts/rk3588/rk-libs/)、[《CMake 交叉编译构建系统精读》](/posts/RT/cmake-cross-compile/)
+- 站内相关：[《回调与钩子精读》](/posts/rt/callback-vs-hook/)、[《rk_libs 设计解析与复现指南》](/posts/rk3588/rk-libs/)、[《CMake 交叉编译构建系统精读》](/posts/rt/cmake-cross-compile/)

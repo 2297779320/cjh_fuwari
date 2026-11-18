@@ -104,3 +104,7 @@ CLI、VPS、服务器、Docker、任何没有图形界面的机器，都没有 B
 - 原文一：[Hermes 多Agent方案 — 人人都在学AI（微信公众号）](https://mp.weixin.qq.com/s/Bc8PbaAq_4DD9cl6OQOQ2w)
 - 原文二：[创建Hermes多Agent团队 — 人人都在学AI（微信公众号）](https://mp.weixin.qq.com/s/n82Eu_4XXI33ujbddoqPxg)
 - 站内相关：[《Oh My Hermes 编排精读》](/posts/ai/omh/)、[《Hermes 生态五项目精读》](/posts/ai/hermes-ecosystem/)、[《DeepSeek Harness 进阶精读》](/posts/ai/dsh-dev-guide/)
+
+## Hermes 系列导航
+
+[生态五项目](/posts/ai/hermes-ecosystem/) · [多 Agent 方案](/posts/ai/hermes-multi-agent/) · [技能与插件](/posts/ai/hermes-skills/) · [自动化十配置](/posts/ai/hermes-automation/) · [OMH 编排](/posts/ai/omh/)

@@ -56,7 +56,7 @@ crates/voltip-tauri-bridge webview 看到的唯一契约（UiCommand/UiEvent/UiS
 
 `voltip-core` 只依赖 `AudioSource`、`Capture`、`Transcriber`、`StreamingTranscriber`、`Refiner`、`Injector`、`ModelManager` 这些 trait（ports），**不依赖 cpal、reqwest、enigo、sherpa**——真实实现由桌面壳注入，测试用假实现（`FakeAudio`/`FakeStreaming`/`FakeModels`）驱动完整状态机。
 
-这带来的直接好处：听写状态机（Idle → Listening → Processing → Done/Failed/Cancelled）可以在没有麦克风、没有网络、没有模型的 CI 里全链路测。对照站内[《回调与钩子精读》](/posts/RT/callback-vs-hook/)里"驱动只依赖约定、不依赖实现"的原则，这是同一思想在应用层的放大版。
+这带来的直接好处：听写状态机（Idle → Listening → Processing → Done/Failed/Cancelled）可以在没有麦克风、没有网络、没有模型的 CI 里全链路测。对照站内[《回调与钩子精读》](/posts/rt/callback-vs-hook/)里"驱动只依赖约定、不依赖实现"的原则，这是同一思想在应用层的放大版。
 
 ### 2. 原生优先 + 单一契约来源
 
@@ -115,7 +115,7 @@ crates/voltip-tauri-bridge webview 看到的唯一契约（UiCommand/UiEvent/UiS
 2. **单一契约来源**：前端不维护第二份真相（`Bridge::publish` 那个设计），跨壳复用才不至于分叉
 3. **降级只在明确信号下发生**：其余情况宁可降级不阻断——这条对任何有外部依赖的服务端/端侧系统都适用
 
-对照站内：[《rk_libs 设计解析》](/posts/rk3588/rk-libs/)里"依赖方向只允许向下"的分层纪律、[《CMake 交叉编译》](/posts/RT/cmake-cross-compile/)里的构建收敛，都是同一种工程审美的不同侧面——**把边界写在结构里，而不是写在注释里**。
+对照站内：[《rk_libs 设计解析》](/posts/rk3588/rk-libs/)里"依赖方向只允许向下"的分层纪律、[《CMake 交叉编译》](/posts/rt/cmake-cross-compile/)里的构建收敛，都是同一种工程审美的不同侧面——**把边界写在结构里，而不是写在注释里**。
 
 ## 参考资料
 

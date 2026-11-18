@@ -162,4 +162,4 @@ cmake -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -G Ninja
 ## 参考资料
 
 - 原文：[CMake交叉编译构建系统 — Psyducking@嵌入式软件客栈（微信公众号）](https://mp.weixin.qq.com/s/uYz9rQ5jTh8uo7zghyadaQ)
-- 站内相关：[《嵌入式 Linux 启动流程精读》](/posts/linux/boot-flow/)、[《rk_libs 设计解析》](/posts/rk3588/rk-libs/)、[《回调与钩子精读》](/posts/RT/callback-vs-hook/)
+- 站内相关：[《嵌入式 Linux 启动流程精读》](/posts/linux/boot-flow/)、[《rk_libs 设计解析》](/posts/rk3588/rk-libs/)、[《回调与钩子精读》](/posts/rt/callback-vs-hook/)

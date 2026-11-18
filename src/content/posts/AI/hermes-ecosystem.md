@@ -54,3 +54,7 @@ HUD 是个浏览器仪表盘，19 个标签页把 Agent 翻个底朝天：健康
 - 原文：[炸场Hermes生态，这 5 个项目建议在用hermes的小主们收藏起来 — AI 小登登（微信公众号）](https://mp.weixin.qq.com/s/BCUC0lobcjlKHM_N5BJTDg)
 - 项目地址（按原文星数排序）：[hermes-workspace](https://github.com/outsourc-e/hermes-workspace)、[awesome-hermes-agent](https://github.com/0xNyk/awesome-hermes-agent)、[oh-my-hermes](https://github.com/rlaope/oh-my-hermes)、[hermes-agent-orange-book](https://github.com/alchaincyf/hermes-agent-orange-book)、[hermes-hudui](https://github.com/joeynyc/hermes-hudui)
 - 站内相关：[《Oh My Hermes 精读》](/posts/ai/omh/)、[《DeepSeek Harness 进阶精读》](/posts/ai/dsh-dev-guide/)
+
+## Hermes 系列导航
+
+[生态五项目](/posts/ai/hermes-ecosystem/) · [多 Agent 方案](/posts/ai/hermes-multi-agent/) · [技能与插件](/posts/ai/hermes-skills/) · [自动化十配置](/posts/ai/hermes-automation/) · [OMH 编排](/posts/ai/omh/)

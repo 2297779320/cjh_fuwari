@@ -137,3 +137,7 @@ hermes approvals apply 1,3          # 按编号批量应用
 
 - 原文：[让Hermes全自动工作的10个配置 — gjxs@搞机小帅（微信公众号）](https://mp.weixin.qq.com/s/T49H9pRjLghK1EuJewjQcg)
 - 站内相关：[《Hermes 技能与插件精读》](/posts/ai/hermes-skills/)、[《Hermes 多 Agent 方案精读》](/posts/ai/hermes-multi-agent/)、[《Hermes 生态五项目精读》](/posts/ai/hermes-ecosystem/)、[《Oh My Hermes 编排精读》](/posts/ai/omh/)
+
+## Hermes 系列导航
+
+[生态五项目](/posts/ai/hermes-ecosystem/) · [多 Agent 方案](/posts/ai/hermes-multi-agent/) · [技能与插件](/posts/ai/hermes-skills/) · [自动化十配置](/posts/ai/hermes-automation/) · [OMH 编排](/posts/ai/omh/)

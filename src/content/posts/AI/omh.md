@@ -100,3 +100,7 @@ macOS / Linux / Windows 都有脚本，Homebrew、bun、npm 也能装（npm/bun 
 - 原文：[给 Hermes 装上一群同事：Oh My Hermes 把 agent 编排做成了基础设施 — 布鲁斯AI（微信公众号）](https://mp.weixin.qq.com/s/SB4w_LYUuEFrljX_HoQzdw)
 - 项目官网：omher.app（安装与文档入口）
 - 站内相关：[《DeepSeek Harness 进阶精读》](/posts/ai/dsh-dev-guide/)、[《Claude Code 应用与实践精读》](/posts/ai/claude-code-playbook/)、[《DSH 插件生态精读》](/posts/ai/dsh-plugins/)
+
+## Hermes 系列导航
+
+[生态五项目](/posts/ai/hermes-ecosystem/) · [多 Agent 方案](/posts/ai/hermes-multi-agent/) · [技能与插件](/posts/ai/hermes-skills/) · [自动化十配置](/posts/ai/hermes-automation/) · [OMH 编排](/posts/ai/omh/)
