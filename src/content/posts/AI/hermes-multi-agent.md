@@ -1,7 +1,7 @@
 ---
 title: Hermes 多 Agent 方案精读：一个 profile 一个 Bot
 published: 2026-09-30
-description: '精读《Hermes 多Agent方案》：profile-per-Bot 的分工模型、桌面版 Bots 界面、无界面环境的 profile+网关路线、飞书/企微/个人微信群聊协作对比，以及三人视频团队的 5 步实操与 --clone 排坑。'
+description: '精读《Hermes 多Agent方案》：profile-per-Bot 的分工模型、桌面版 Bots 界面、无界面环境的 profile+网关路线、飞书/企微/个人微信群聊协作对比、三人视频团队 5 步实操与 --clone 排坑，以及 AGENTS.md 协作手册与 SOUL.md 人格范本。'
 image: 'https://www.loliapi.com/bg/'
 tags: [AI Agent, Hermes, 多Agent, 飞书]
 category: 'AI'
@@ -95,6 +95,39 @@ CLI、VPS、服务器、Docker、任何没有图形界面的机器，都没有 B
 
 最后在飞书建群，进群设置的群机器人里把三个都加上。**群里必须 @ 对应机器人她才回**；三个 Bot 各带自己的记忆、技能、人格，@ 谁谁答。原文提到多 Agent 协作有两种走法：流水线式，或多智能体同时处理单个文件。
 
+## 八、进阶：协作手册与人格范本
+
+第三篇来源（梦朝思夕）在同样的五步之上，补了两块「团队怎么真的协作」的内容，值得单独记。
+
+### AGENTS.md：所有 Agent 共享的任务背景
+
+profile 之间**不共享记忆**，但可以共享一份任务背景文档——`~/.hermes/agents.md`，由主 Agent 维护、其他 Agent 只读引用。内容包括：
+
+- **Agent 矩阵**：谁是谁（主控 / 开发助理 / 运维）、各自的 profile 路径、核心职责
+- **任务分发原则**：代码架构 → 开发助理；运维部署 → 运维；内容主流程 → 主控；复杂任务先计划再执行
+- **协作方式**：主 Agent 负责分配与汇总、子 Agent 完成后由主 Agent 验证交付，通过 `delegate_task` 或 `hermes -p <name>` 派活
+- **共享资源路径**：agents.md、plans/（执行计划存档）、profiles/、skills/
+
+同时在各 profile 的 `memories/MEMORY.md` 里写明自己的角色和「共享背景见 agents.md」这条指针——每个 Agent 启动时就知道自己是谁、该找谁。这是 profile-per-Bot 能真正「组队」而不是「各自为战」的关键。
+
+### SOUL.md：人格模板可以直接抄
+
+SOUL.md 是系统提示里的第一份内容，定义 Agent 是谁、怎么说话、避开什么。原文给了一份完整范本，骨架五段：
+
+1. **身份与价值观**：不是聊天机器人，是真干活的同事；有观点、先自己找答案、用能力赢得信任、记住自己是客人
+2. **核心原则**：真实性第一（不瞎编、源码验证）；计划先行（超过 3 步先列计划）；结果导向（交付即验证、拒绝重复）
+3. **核心职责**：写代码与审查、方案设计、部署运维
+4. **边界**：技术精准、回答简洁、私事保密、对外行动先询问
+5. **连续性**：记忆靠文件——读它、更新它，改了要告诉用户
+
+换角色就换 SOUL.md——比在群里 @ 一句「你现在是运维」靠谱得多。
+
+### --clone-all：完整快照
+
+`--clone` 复制配置和技能；`--clone-all` 额外复制**所有记忆和完整会话历史**，相当于整个 Agent 的快照。要「继承调好的基础配置、记忆从零开始」，用 `--clone` 再清记忆；要「连历史一起带走」（比如迁移机器），才用 `--clone-all`。
+
+补两条原文 Q&A：profile 数量没有上限，按职能划分（开发/运维/内容）即可；`profile use` 手动切换适合临时需求，长期协作还是要上多 Bot 并行。
+
 ## 写在最后
 
 两种多 Agent 路线现在能一眼分清了：**Hermes 原生方案 = 招一群各管一摊的同事**（profile-per-Bot、群聊协作、人工插手每一环）；**OMH = 给一个目标配项目经理**（DAG 拆解、并行 lane、证据化验收）。前者适合长期值守、职责固定的团队结构，后者适合一次性大任务的并行交付——而且两者可以叠着用。
@@ -103,6 +136,7 @@ CLI、VPS、服务器、Docker、任何没有图形界面的机器，都没有 B
 
 - 原文一：[Hermes 多Agent方案 — 人人都在学AI（微信公众号）](https://mp.weixin.qq.com/s/Bc8PbaAq_4DD9cl6OQOQ2w)
 - 原文二：[创建Hermes多Agent团队 — 人人都在学AI（微信公众号）](https://mp.weixin.qq.com/s/n82Eu_4XXI33ujbddoqPxg)
+- 原文三：[多 Agent 团队协作：Hermes Agent 的正确打开方式 — 梦朝思夕（微信公众号）](https://mp.weixin.qq.com/s/EncXXMhmaMwxuH-rTCrn-g)
 - 站内相关：[《Oh My Hermes 编排精读》](/posts/ai/omh/)、[《Hermes 生态五项目精读》](/posts/ai/hermes-ecosystem/)、[《DeepSeek Harness 进阶精读》](/posts/ai/dsh-dev-guide/)
 
 ## Hermes 系列导航
