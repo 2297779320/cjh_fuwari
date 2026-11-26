@@ -85,3 +85,7 @@ DQBUF 的等待条件里含 `!streaming`——STREAMOFF 之后，阻塞的线程
 - 原文：[STREAMOFF 与异常退出路径 — txp@飞一样的成长（微信公众号）](https://mp.weixin.qq.com/s/l50CHiE8yDFHrKIkbKH4PA)（《V4L2 源码解析》系列第十篇）
 - 原文基于 Linux v6.1 V4L2/VB2 源码（VIMC + vmalloc 后端实验）
 - 站内相关：[《V4L2 文件句柄精读》](/posts/linux/v4l2-fh/)、[《V4L2 驱动对象模型精读》](/posts/linux/v4l2-driver-model/)、[《V4L2 视频编解码驱动精读》](/posts/linux/v4l2-codec/)、[《Rockchip 零拷贝技术精读》](/posts/rk3588/zero-copy/)
+
+## V4L2 系列导航
+
+[对象模型](/posts/linux/v4l2-driver-model/) · [文件句柄](/posts/linux/v4l2-fh/) · [STREAMOFF](/posts/linux/v4l2-streamoff/) · [Media Controller](/posts/linux/media-controller/) · [编解码](/posts/linux/v4l2-codec/)

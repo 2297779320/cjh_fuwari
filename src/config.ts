@@ -59,6 +59,11 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		LinkPreset.About,
 		{
+			name: "系列",
+			url: "posts/guide/series/",
+			external: false,
+		},
+		{
 			name: "时间线",
 			url: "time/", // Internal links should not include the base path, as it is automatically added
 			external: false, // Show an external link icon and will open in a new tab

@@ -105,3 +105,7 @@ media-ctl -d /dev/media0 --print-dot   # 导出图形
 - 原文：[从 Entity 到 Pad、Link——Linux 怎样描述一条图像处理链路？ — txp@飞一样的成长（微信公众号）](https://mp.weixin.qq.com/s/kFalJmHEDFU--DN5IrFL1A)（《V4L2 源码解析》第二十篇）
 - 原文基于 Linux 内核 `drivers/media/mc/` 与 VIMC 测试驱动源码
 - 站内相关：[《V4L2 驱动对象模型精读》](/posts/linux/v4l2-driver-model/)、[《V4L2 文件句柄精读》](/posts/linux/v4l2-fh/)、[《V4L2 STREAMOFF 精读》](/posts/linux/v4l2-streamoff/)
+
+## V4L2 系列导航
+
+[对象模型](/posts/linux/v4l2-driver-model/) · [文件句柄](/posts/linux/v4l2-fh/) · [STREAMOFF](/posts/linux/v4l2-streamoff/) · [Media Controller](/posts/linux/media-controller/) · [编解码](/posts/linux/v4l2-codec/)

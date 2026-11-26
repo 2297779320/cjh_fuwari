@@ -131,3 +131,7 @@ VIMC 捕获节点 `open = v4l2_fh_open`、`release = vb2_fop_release`——名�
 - 原文：[V4L2 源码深度解析（三）：同一个 /dev/videoX 被多次打开，状态如何管理？ — txp@飞一样的成长（微信公众号）](https://mp.weixin.qq.com/s/BkSof9JgSZRrdQY_SXXlxQ)
 - 原文基于 Linux 6.1 源码（`drivers/media/v4l2-core/v4l2-fh.c` 及关联文件）考证
 - 站内相关：[《V4L2 驱动对象模型精读》](/posts/linux/v4l2-driver-model/)、[《Rockchip 零拷贝技术精读》](/posts/rk3588/zero-copy/)、[《V4L2 视频编解码驱动精读》](/posts/linux/v4l2-codec/)
+
+## V4L2 系列导航
+
+[对象模型](/posts/linux/v4l2-driver-model/) · [文件句柄](/posts/linux/v4l2-fh/) · [STREAMOFF](/posts/linux/v4l2-streamoff/) · [Media Controller](/posts/linux/media-controller/) · [编解码](/posts/linux/v4l2-codec/)
