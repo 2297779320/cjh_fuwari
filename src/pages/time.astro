@@ -1,8 +1,11 @@
-
 ---
+import TimelinePanel from "@components/TimelinePanel.svelte";
 import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { getSortedPostsList } from "../utils/content-utils";
+
+const sortedPostsList = await getSortedPostsList();
 ---
 
 <MainGridLayout title={"时间线"}>
-    
+    <TimelinePanel sortedPosts={sortedPostsList} client:load></TimelinePanel>
 </MainGridLayout>
