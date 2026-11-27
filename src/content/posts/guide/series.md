@@ -32,6 +32,7 @@ txp《V4L2 源码深度解析》系列（站内收录部分）+ 同域精读：
 
 - [RV1126B 显示硬件全景精读](/posts/rk3588/rv1126b-display/)——VOP、RGA、DSI 与 RGB 各管什么
 - [从 NV12 到 RGB888：视频颜色表示精读](/posts/linux/nv12-rgb-color/)——矩阵、量程、寻址与字节序陷阱
+- [图像在内存里怎样排列精读](/posts/linux/pixel-layout/)——FourCC、Pitch、Offset 与 Modifier 的逐字节验证
 
 ## 内核基础设施
 

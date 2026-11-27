@@ -131,10 +131,10 @@ DRM 按小端字里的分量位置命名，V4L2 的 8 位三字节 RGB 按**内�
 
 回到开头那块暗红：最省力的动作是在 (4,3) 对上三个字节，再查显示窗口实际用的矩阵和范围。若输入确实是 `3F 66 F0`、软件按 709 limited 得 `(255,1,0)`，而窗口还停在 601 limited——该改的是 plane 的颜色属性。拿到这条证据，白平衡、面板色温、背光才有先后顺序。
 
-这篇的方法论和站内[《零拷贝精读》](/posts/rk3588/zero-copy/)一脉相承：**同一个点从 DDR 跟到面板，每一步都能逐字节核对**。颜色问题之所以难，是因为它同时被布局（NV12 寻址）、矩阵（601/709）、量程（limited/full）、打包（DRM/V4L2 字节序）四个变量影响——每轮只改一个，保留软件参考，才能定位。
+这篇的方法论和站内[《零拷贝精读》](/posts/rk3588/zero-copy/)一脉相承：**同一个点从 DDR 跟到面板，每一步都能逐字节核对**。颜色问题之所以难，是因为它同时被布局（NV12 寻址）、矩阵（601/709）、量程（limited/full）、打包（DRM/V4L2 字节序）四个变量影响——每轮只改一个，保留软件参考，才能定位。而这一切的前提——你取到的确实是这个坐标的三个样本——见[《图像在内存里怎样排列：Pitch、Offset 与 Modifier 精读》](/posts/linux/pixel-layout/)。
 
 ## 参考资料
 
 - 原文：[RGB 与 YUV 怎样表示颜色：从 NV12 到 RGB888 — txp@飞一样的成长（微信公众号）](https://mp.weixin.qq.com/s/9QU24IgCwVrA2XRqoKg2Vg)
 - 原文基于 Rockchip `develop-6.1` 提交 `77168c8d` 的 RV1126B EVB 源码核查
-- 站内相关：[《V4L2 驱动对象模型精读》](/posts/linux/v4l2-driver-model/)、[《V4L2 文件句柄精读》](/posts/linux/v4l2-fh/)、[《Rockchip 零拷贝技术精读》](/posts/rk3588/zero-copy/)、[《Rockchip DRM/KMS 精读》](/posts/rk3588/drm-kms/)
+- 站内相关：[《V4L2 驱动对象模型精读》](/posts/linux/v4l2-driver-model/)、[《V4L2 文件句柄精读》](/posts/linux/v4l2-fh/)、[《Rockchip 零拷贝技术精读》](/posts/rk3588/zero-copy/)、[《Rockchip DRM/KMS 精读》](/posts/rk3588/drm-kms/)、[《图像内存布局精读》](/posts/linux/pixel-layout/)
